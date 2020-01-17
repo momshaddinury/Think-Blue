@@ -8,7 +8,10 @@ class BaseFunction extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Landing Page',
-      home: Scaffold(backgroundColor: Colors.blueAccent, body: BodyFunction()),
+      home: Scaffold(
+        backgroundColor: Colors.blueAccent,
+        body: BodyFunction(),
+      ),
     );
   }
 }
@@ -20,13 +23,15 @@ class BodyFunction extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Container(
+            //Center Image
             padding: EdgeInsets.only(top: 100.0, bottom: 50),
             child: Image.asset(
-              'images/water.png',
+              'images/waterhd.png',
               scale: 0.8,
             ),
           ),
           Column(
+            //App Name Holder
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
               Container(
@@ -66,31 +71,28 @@ class BodyFunction extends StatelessWidget {
             color: Colors.white,
             height: 103,
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 24.0),
-                  width: 261,
-                  color: Colors.blue.shade900,
-                  height: 54,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        child: Text(
-                          "START",
-                          style: TextStyle(
-                            color: Colors.white,
-                            //fontWeight: FontWeight.w800,
-                            fontFamily: 'Roboto',
-                            letterSpacing: 0.5,
-                            fontSize: 35,
-                          ),
-                        ),
-                      ),
-                    ],
+                ButtonTheme(
+                  minWidth: 260.0,
+                  height: 55.0,
+                  child: RaisedButton(
+                    shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(18.0),
+                      side: BorderSide(color: Colors.blue.shade900),
+                    ),
+                    onPressed: () {},
+                    splashColor: Colors.blueAccent,
+                    color: Colors.blue.shade900,
+                    textColor: Colors.white,
+                    child: Text("Start now".toUpperCase(),
+                        style: TextStyle(
+                          fontSize: 26,
+                          fontFamily: 'Roboto',
+                          letterSpacing: 0.5,
+                        )
+                    ),
                   ),
                 ),
               ],
