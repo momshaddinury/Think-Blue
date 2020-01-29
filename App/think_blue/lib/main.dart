@@ -25,7 +25,7 @@ class BodyFunction extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Expanded(
-            flex: 4,
+            flex:5,
             child: Container(
               height: double.maxFinite,
               width: double.maxFinite,
@@ -42,12 +42,9 @@ class BodyFunction extends StatelessWidget {
                     ),
                   ]),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Expanded(
-                      child: Container(
-                        //Center Image
-                        child: Image.asset('images/waterhd.png'),
-                      )),
+                  Image.asset('images/waterhd.png'),
                   Column(
                     //App Name Holder
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -70,9 +67,6 @@ class BodyFunction extends StatelessWidget {
                                 letterSpacing: 0.5,
                                 fontSize: 65)),
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
                     ],
                   ),
                 ],
@@ -80,8 +74,9 @@ class BodyFunction extends StatelessWidget {
             ),
           ),
           Expanded(
+            flex: 1,
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 35.0),
+              padding: const EdgeInsets.symmetric(vertical: 25.0),
               child: RaisedButton(
                 elevation: 7,
                 shape: new RoundedRectangleBorder(
