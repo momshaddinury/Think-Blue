@@ -12,13 +12,13 @@ class BaseFunction extends StatelessWidget {
       title: 'Landing Page',
       home: Scaffold(
         backgroundColor: Colors.white,
-        body: BodyFunction(),
+        body: WelcomeScreen(),
       ),
     );
   }
 }
 
-class BodyFunction extends StatelessWidget {
+class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -81,14 +81,18 @@ class BodyFunction extends StatelessWidget {
                 elevation: 7,
                 shape: new RoundedRectangleBorder(
                   borderRadius: new BorderRadius.circular(10.0),
-                  side: BorderSide(color: Colors.blue.shade900),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SecondRoute()),
+                  );
+                },
                 splashColor: Colors.blueAccent,
                 color: Colors.blue.shade900,
                 child: Text("Start now".toUpperCase(),
                     style: TextStyle(
-                        fontSize: 26,
+                        fontSize: 20,
                         fontFamily: 'Roboto',
                         letterSpacing: 0.5,
                         color: Colors.white)),
@@ -96,6 +100,26 @@ class BodyFunction extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class SecondRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Second Route"),
+      ),
+      body: Center(
+        child: RaisedButton(
+          onPressed: () {
+            // Navigate back to first route when tapped.
+            Navigator.pop(context);
+          },
+          child: Text('Go back!'),
+        ),
       ),
     );
   }
