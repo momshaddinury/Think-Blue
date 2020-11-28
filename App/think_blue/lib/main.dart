@@ -1,7 +1,11 @@
-import 'package:landing_page/Components/constants.dart';
-import 'Screens/first_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:landing_page/views/bottom_nav_bar/bottom_navigation_bar.dart';
+import 'package:landing_page/views/dashboard_screen.dart';
+
+import 'utils/constants.dart';
+import 'views/splash_screen.dart';
 
 void main() => runApp(BaseFunction());
 
@@ -16,7 +20,7 @@ class BaseFunction extends StatelessWidget {
       title: 'THINK blue',
       home: Scaffold(
         backgroundColor: Colors.white,
-        body: WelcomeScreen(),
+        body: BottomNavigationScreen(),
       ),
     );
   }

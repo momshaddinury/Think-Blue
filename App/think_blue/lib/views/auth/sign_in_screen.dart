@@ -1,11 +1,8 @@
-//
-
-//
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:landing_page/Components/constants.dart';
+import 'package:landing_page/utils/constants.dart';
+import 'package:landing_page/utils/sign_in_button.dart';
 
-import '../Components/sign_in_button.dart';
 
 class SecondRoute extends StatelessWidget {
   @override
@@ -49,10 +46,7 @@ class _SecondPageUIState extends State<SecondPageUI> {
                     text: "Join THINK Blue",
                     style: kTitleTextStyle,
                     children: <TextSpan>[
-                      TextSpan(
-                          text:
-                              "\nJoin our growing community to keep you updated and motivated",
-                          style: kSubTitleTextStyle),
+                      TextSpan(text: "\nJoin our growing community to keep you updated and motivated", style: kSubTitleTextStyle),
                     ],
                   ),
                 ),

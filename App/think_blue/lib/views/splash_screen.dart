@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:landing_page/Components/constants.dart';
-import 'second_screen.dart';
-import '../Components/constants.dart';
+import 'package:landing_page/utils/constants.dart';
+import 'package:landing_page/utils/styles.dart';
+import 'package:landing_page/views/dashboard_screen.dart';
+import 'auth/sign_in_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
@@ -14,14 +15,11 @@ class WelcomeScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Expanded(
-          flex: 7,
           child: Container(
             width: double.maxFinite,
             decoration: BoxDecoration(
               color: kAccentColor,
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(20.0),
-                  bottomRight: Radius.circular(20.0)),
+              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25.0), bottomRight: Radius.circular(25.0)),
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey,
@@ -52,29 +50,33 @@ class WelcomeScreen extends StatelessWidget {
             ),
           ),
         ),
-        Expanded(
-          child: Container(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 35.0),
-              child: RaisedButton(
-                elevation: 2,
-                splashColor: Colors.blueAccent,
-                color: kButtonBGColor,
-                shape: new RoundedRectangleBorder(
-                  borderRadius: new BorderRadius.circular(10.0),
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 25, horizontal: 40),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                height: 56,
+                child: RaisedButton(
+                  elevation: 2,
+                  splashColor: Colors.blueAccent,
+                  color: AppColor.darkBlueColor,
+                  shape: new RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(10.0),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => DashboardScreen()),
+                    );
+                  },
+                  child: Text("START",
+                      style: kButtonTextStyle.copyWith(
+                        color: Colors.white,
+                      )),
                 ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SecondRoute()),
-                  );
-                },
-                child: Text("START NOW",
-                    style: kButtonTextStyle.copyWith(
-                      color: Colors.white,
-                    )),
               ),
-            ),
+            ],
           ),
         ),
       ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:landing_page/Components/constants.dart';
+
+import 'constants.dart';
 
 class SignInButton extends StatelessWidget {
   SignInButton({@required this.colour, @required this.buttonText});
